@@ -1,5 +1,9 @@
-import random
-import prompt
+from brain_games.logic import random_number
+from brain_games.cli import user_answer
+
+
+def print_rules():
+    print('Answer "yes" if the number is even, otherwise answer "no".')
 
 
 def start(name):
@@ -18,19 +22,10 @@ def start(name):
     print(f'Congratulations, {name}!')
 
 
-def print_rules():
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-
-
 def question():
-    number = random.randint(1, 99)
+    number = random_number()
     print(f'Question: {number}')
     return number
-
-
-def user_answer():
-    answer = prompt.string('Your answer: ')
-    return answer
 
 
 def check_even(number):
