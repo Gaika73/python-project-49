@@ -1,5 +1,5 @@
 from brain_games.logic import random_number
-from brain_games.cli import user_answer
+from brain_games.cli import get_user_answer
 
 
 def print_rules():
@@ -11,7 +11,7 @@ def start(name):
 
     for _i in range(3):
         number = question()
-        answer = user_answer()
+        answer = get_user_answer()
 
         if not check_answer(answer, number):
             print_wrong(name, answer, number)

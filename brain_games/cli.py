@@ -8,5 +8,5 @@ def welcome_user():
     return name
 
 
-def user_answer():
+def get_user_answer():
     return prompt.string('Your answer: ')
