@@ -10,3 +10,8 @@ def welcome_user():
 
 def get_user_answer():
     return prompt.string('Your answer: ')
+
+
+def print_wrong(name, correct_answer, user_answer):
+    print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+    print(f"Let's try again, {name}!")

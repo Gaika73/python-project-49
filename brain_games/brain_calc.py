@@ -1,6 +1,6 @@
 import random
 from brain_games.logic import random_number
-from brain_games.cli import get_user_answer
+from brain_games.cli import get_user_answer, print_wrong
 
 
 def print_rules():
@@ -49,8 +49,3 @@ def get_correct_answer(number_one, action, number_two):
 
 def check_answer(correct_answer, user_answer):
     return str(correct_answer) == user_answer
-
-
-def print_wrong(name, correct_answer, user_answer):
-    print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
-    print(f"Let's try again, {name}!")
