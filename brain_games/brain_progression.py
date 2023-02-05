@@ -23,7 +23,9 @@ def start(name):
 
 
 def question():
-    progression = list(range(random.randint(1, 10), 100, random.randint(1, 10)))[0:11]
+    start_range = random.randint(1, 10)
+    step_range = random.randint(1, 10)
+    progression = list(range(start_range, 100, step_range))[0:11]
     empty_index = random.randint(0, 10)
     number = progression[empty_index]
     progression[empty_index] = '..'
