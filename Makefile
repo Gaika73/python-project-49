@@ -1,6 +1,3 @@
-install:
-	poetry install
-
 brain-games:
 	poetry run brain-games
 
@@ -19,6 +16,9 @@ brain-progression:
 brain-prime:
 	poetry run brain-prime
 
+install:
+	poetry install
+
 build:
 	poetry build
 
@@ -30,3 +30,5 @@ package-install:
 
 lint:
 	poetry run flake8 brain_games
+
+check: install build publish package-install lint
