@@ -1,40 +1,27 @@
 import math
-from brain_games.logic import random_number
-from brain_games.cli import get_user_answer, print_wrong
+import random
 
 
-def print_rules():
-    print('Find the greatest common divisor of given numbers.')
+def get_rules():
+    return 'Find the greatest common divisor of given numbers.'
 
 
-def start(name):
-    print_rules()
-
-    for _i in range(3):
-        number_one, number_two = question()
-        answer = get_user_answer()
-        correct_answer = get_correct_answer(number_one, number_two)
-
-        if not check_answer(correct_answer, answer):
-            print_wrong(name, correct_answer, answer)
-            return
-        else:
-            print('Correct!')
-
-    print(f'Congratulations, {name}!')
+def get_question_and_answer():
+    question = get_question()
+    answer = get_correct_answer(question)
+    return [question, answer]
 
 
-def question():
+def get_question():
     number_one = random_number()
     number_two = random_number()
-    print(f'Question: {number_one} {number_two}')
-    task = [number_one, number_two]
-    return task
+    return [number_one, number_two]
 
 
-def get_correct_answer(number_one, number_two):
+def get_correct_answer(question):
+    number_one, number_two = question
     return math.gcd(number_one, number_two)
 
 
-def check_answer(correct_answer, user_answer):
-    return str(correct_answer) == user_answer
+def random_number():
+    return random.randint(1, 99)

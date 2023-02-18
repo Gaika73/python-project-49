@@ -1,50 +1,33 @@
-from brain_games.logic import random_number
-from brain_games.cli import get_user_answer
+import random
 
 
-def print_rules():
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+def get_rules():
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def start(name):
-    print_rules()
-
-    for _i in range(3):
-        number = question()
-        answer = get_user_answer()
-
-        if not check_answer(answer, number):
-            print_wrong(name, answer, number)
-            return
-        else:
-            print('Correct!')
-
-    print(f'Congratulations, {name}!')
+def get_question_and_answer():
+    question = get_question()
+    answer = get_correct_answer(question)
+    return [question, answer]
 
 
-def question():
+def get_question():
     number = random_number()
-    print(f'Question: {number}')
-    return number
+    return [number]
 
 
-def check_prime(number):
-    d = 2
-    while number % d != 0:
-        d += 1
-    return d == number
+def get_correct_answer(question):
+    number = question[0]
+    divider = 2
+    while number % divider != 0:
+        divider += 1
 
-
-def check_answer(answer, number):
-    if check_prime(number):
-        return answer == 'yes'
+    if divider == number:
+        result = 'yes'
     else:
-        return answer == 'no'
+        result = 'no'
+    return result
 
 
-def print_wrong(name, answer, number):
-    if check_prime(number):
-        print(f"'{answer}' is wrong answer ;(. Correct answer was 'yes'.")
-    else:
-        print(f"'{answer}' is wrong answer ;(. Correct answer was 'no'.")
-    print(f"Let's try again, {name}!")
+def random_number():
+    return random.randint(1, 99)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import brain_games.cli
+from brain_games import cli
 
 
 def main():
-    brain_games.cli.welcome_user()
+    cli.welcome_user()

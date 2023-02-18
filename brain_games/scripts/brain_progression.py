@@ -1,8 +1,6 @@
-#!/usr/bin/progression python3
-import brain_games.cli
-import brain_games.brain_progression
+#!/usr/bin/env python3
+from brain_games import source, brain_progression
 
 
 def main():
-    name = brain_games.cli.welcome_user()
-    brain_games.brain_progression.start(name)
+    source.start(brain_progression)
