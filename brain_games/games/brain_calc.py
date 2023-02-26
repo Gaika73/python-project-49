@@ -9,9 +9,9 @@ def get_question_and_answer():
 
 
 def get_question():
-    number_one = random_number()
-    action = random_choice()
-    number_two = random_number()
+    number_one = random.randint(1, 99)
+    action = random.choice(['+', '-', '*'])
+    number_two = random.randint(1, 99)
     return [number_one, action, number_two]
 
 
@@ -24,11 +24,3 @@ def get_correct_answer(question):
     elif action == '*':
         result = number_one * number_two
     return result
-
-
-def random_number():
-    return random.randint(1, 99)
-
-
-def random_choice():
-    return random.choice(['+', '-', '*'])

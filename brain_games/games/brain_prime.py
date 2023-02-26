@@ -9,7 +9,7 @@ def get_question_and_answer():
 
 
 def get_question():
-    number = random_number()
+    number = random.randint(1, 99)
     return [number]
 
 
@@ -24,7 +24,3 @@ def get_correct_answer(question):
     else:
         result = 'no'
     return result
-
-
-def random_number():
-    return random.randint(1, 99)

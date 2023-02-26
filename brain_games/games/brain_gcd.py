@@ -10,15 +10,11 @@ def get_question_and_answer():
 
 
 def get_question():
-    number_one = random_number()
-    number_two = random_number()
+    number_one = random.randint(1, 99)
+    number_two = random.randint(1, 99)
     return [number_one, number_two]
 
 
 def get_correct_answer(question):
     number_one, number_two = question
     return math.gcd(number_one, number_two)
-
-
-def random_number():
-    return random.randint(1, 99)
