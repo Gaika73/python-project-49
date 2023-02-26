@@ -1,10 +1,11 @@
 from brain_games import cli
+ROUNDS = 3
 
 
-def start(game, rounds=3):
+def start(game):
     name = cli.welcome_user()
     cli.print_rules(game.get_rules())
-    for _i in range(rounds):
+    for _i in range(ROUNDS):
         question, correct_answer = game.get_question_and_answer()
         cli.print_question(question)
         user_answer = cli.get_user_answer()
