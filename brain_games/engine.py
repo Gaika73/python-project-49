@@ -10,13 +10,9 @@ def start(game):
         cli.print_question(question)
         user_answer = cli.get_user_answer()
 
-        if not check_answer(correct_answer, user_answer):
+        if not str(correct_answer) == str(user_answer):
             cli.print_wrong(name, correct_answer, user_answer)
             return
         else:
             cli.print_correct()
     cli.print_congratulations(name)
-
-
-def check_answer(correct_answer, user_answer):
-    return str(correct_answer) == str(user_answer)
