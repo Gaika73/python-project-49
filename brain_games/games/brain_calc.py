@@ -1,8 +1,5 @@
 import random
-
-
-def get_rules():
-    return 'What is the result of the expression?'
+RULES = 'What is the result of the expression?'
 
 
 def get_question_and_answer():

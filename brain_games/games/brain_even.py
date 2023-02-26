@@ -1,8 +1,5 @@
 import random
-
-
-def get_rules():
-    return 'Answer "yes" if the number is even, otherwise answer "no".'
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_question_and_answer():
