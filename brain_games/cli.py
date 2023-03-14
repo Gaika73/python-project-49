@@ -8,10 +8,6 @@ def welcome_user():
     return name
 
 
-def print_rules(rules):
-    print(rules)
-
-
 def print_question(question):
     print(f'Question: {" ".join(map(str, question))}')
 
